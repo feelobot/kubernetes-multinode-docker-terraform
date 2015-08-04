@@ -1,0 +1,10 @@
+#cloud-config
+# Cloud config for worker
+
+runcmd:
+  # clone kubernetes
+  - git clone git@github.com:GoogleCloudPlatform/kubernetes.git
+  # setup master
+  - export K8S_VERSION=
+  - export MASTER_IP=
+  - cd kubernetes/cluster/docker-multinode && ./worker.sh
