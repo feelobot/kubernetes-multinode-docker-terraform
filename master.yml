@@ -1,0 +1,9 @@
+#cloud-config
+# Cloud config for master
+
+runcmd:
+  # clone kubernetes
+  - git clone git@github.com:GoogleCloudPlatform/kubernetes.git
+  # setup master
+  - export K8S_VERSION=
+  - cd kubernetes/cluster/docker-multinode && ./master.sh
