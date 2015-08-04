@@ -7,12 +7,12 @@ variable "ami" {
 resource "aws_instance" "master" {
   ami = "${var.ami}"
   instance_type = "m1.small"
-  user_data = "${file(\"cloud-config/master.yml\")}"
+  user_data = "${file(\"master.yml\")}"
 }
 
 resource "aws_instance" "worker" {
   ami = "${var.ami}"
   instance_type = "m1.small"
   count = 2
-  user_data = "${file(\"cloud-config/worker.yml\")}"
+  user_data = "${file(\"worker.yml\")}"
 }
